@@ -11,7 +11,7 @@ const Renderer = ({ hours, minutes, seconds, completed }: { hours: number; minut
     // Render a completed state
     return (
       <Box display='flex' justifyContent='center' alignItems='center' fontFamily='Poppins'>
-        <Text fontSize='150' className="new-year" fontWeight='bold'>{newYear.getFullYear()}</Text>
+        <Text fontSize='150' color='whiteAlpha.500' fontWeight='bold'>{newYear.getFullYear()}</Text>
         <FireworksMoment/>
       </Box>
     );
@@ -20,7 +20,7 @@ const Renderer = ({ hours, minutes, seconds, completed }: { hours: number; minut
     if (seconds <= 10 && hours === 0 && minutes === 0) {
       return (
         <Box display='flex' justifyContent='center' alignItems='center' fontFamily='Poppins'>
-          <Text fontSize='150' className="new-year" fontWeight='bold'>{seconds}</Text>
+          <Text fontSize='150' color='whiteAlpha.500' fontWeight='bold'>{seconds}</Text>
         </Box>
       )
     } else {

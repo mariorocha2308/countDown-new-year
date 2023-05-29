@@ -1,22 +1,15 @@
-:root {
-  background:linear-gradient(
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)
-  ), url('./assets/alistair-macrobert-4TKFpJPnyU8-unsplash.jpg');
-  background-size: cover;
-}
-
 body {
   margin: 0px;
   padding: 0px;
 }
 
 .full-screen-toogle {
-  background:linear-gradient(
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)
-  ), url('./assets/alistair-macrobert-4TKFpJPnyU8-unsplash.jpg');
-  background-size: cover;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: #0F2027;  
+  background: -webkit-linear-gradient(to right, #0F2027, #203A43, #0F2027); 
+  background: linear-gradient(to right, #0F2027, #203A43, #0F2027);
 }
 
 .full-screen-float-button {
@@ -27,8 +20,4 @@ body {
   color: white;
   cursor: pointer;
   z-index: 1;
-}
-
-.new-year {
-  color: rgba(255, 255, 255, 0.47);
 }
