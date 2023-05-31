@@ -1,22 +1,35 @@
-import { Box, Stack, Text } from '@chakra-ui/react'
-import FireworksMoment from "./FireworksMoment";
+import { Suspense, lazy } from 'react';
+import { Box, CircularProgress, Stack, Text } from '@chakra-ui/react'
 import { zeroPad } from 'react-countdown';
 import '../index.css'
+
+const FireworksMoment = lazy(() => import('./FireworksMoment'))
 
 const Renderer = ({ hours, minutes, seconds, completed }: { hours: number; minutes: number; seconds: number; completed: unknown}) => {
 
   const newYear = new Date()
+  const currentDay = new Date().toLocaleString('en-us',{month:'short', day:'numeric'})
+
+  if (currentDay !== 'Dec 31') {
+    return (
+      <Box display='flex' justifyContent='center' alignItems='center' flexDirection='column'>
+        <Text fontSize='150' color='whiteAlpha.700' fontWeight='bold'>{newYear.getFullYear()}</Text>
+      </Box>
+    )
+  }
 
   if (completed) {
-    // Render a completed state
     return (
-      <Box display='flex' justifyContent='center' alignItems='center' fontFamily='Poppins'>
-        <Text fontSize='150' color='whiteAlpha.500' fontWeight='bold'>{newYear.getFullYear()}</Text>
-        <FireworksMoment/>
-      </Box>
+      <Suspense fallback={<CircularProgress isIndeterminate color='white' />}>
+        <Box display='flex' justifyContent='center' alignItems='center' fontFamily='Poppins'>
+          <Text fontSize='150' color='whiteAlpha.500' fontWeight='bold'>{newYear.getFullYear()}</Text>
+          <FireworksMoment/>
+        </Box>
+      </Suspense>
     );
-  } else {
-    // Render a countdown
+  }
+
+  if (currentDay === 'Dec 31') {
     if (seconds <= 10 && hours === 0 && minutes === 0) {
       return (
         <Box display='flex' justifyContent='center' alignItems='center' fontFamily='Poppins'>
