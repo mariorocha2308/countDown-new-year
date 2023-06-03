@@ -28,7 +28,7 @@ _Below is an example of how you can instruct your audience on installing and set
    ```
 2. Go to your favorite browser and copy url
    ```sh
-   http://localhost:3000
+   http://localhost:5173
    ```
 
 <!-- USAGE EXAMPLES -->
