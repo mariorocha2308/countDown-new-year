@@ -1,0 +1,1 @@
+export const currentDay = new Date().toLocaleString('en-us',{month:'short', day:'numeric'})

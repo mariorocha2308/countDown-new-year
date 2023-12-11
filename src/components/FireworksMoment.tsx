@@ -17,9 +17,13 @@ const FireworksMoment = () => {
   return ( 
     <Fireworks ref={ref}
       options={{ 
-        rocketsPoint: { min: 0, max: 100 }, 
-        gravity: 1.41, 
+        rocketsPoint: { min: 94, max: 94 }, 
+        gravity: 1.50, 
         decay: { min: 0.011, max: 0.020}, 
+        traceSpeed: 7,
+        traceLength: 4.62,
+        particles: 65,
+        lineWidth: {explosion: {min: 4.76, max: 6.69 }},
         delay: { min: 44.84, max: 57.90 }, 
         sound: { enabled: true, files: [
           location.href + 'sounds/explosion0.mp3',

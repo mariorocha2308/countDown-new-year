@@ -1,16 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-display: swap;
   font-family: "Poppins";
   src: local("PoppinsBold700"),
-    url("./fonts/Poppins-Bold.ttf") format("truetype");
+    url("../assets/fonts/Poppins-Bold.ttf") format("truetype");
 }
 
-body {
-  margin: 0px;
-  padding: 0px;
+video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  z-index: -10;
+  visibility: visible;
 }
 
-.full-screen-toogle {
+/* .full-screen-toogle {
   display: grid;
   place-items: center;
   height: 100vh;
@@ -27,4 +37,4 @@ body {
   color: white;
   cursor: pointer;
   z-index: 1;
-}
+} */

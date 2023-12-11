@@ -1,58 +1,46 @@
-import { Box, Stack, Text } from '@chakra-ui/react'
 import Countdown, { zeroPad } from 'react-countdown';
 import FireworksMoment from './FireworksMoment';
-import '../index.css'
-
-const year = new Date()
+import { currentDay } from '../helpers';
 
 const Renderer = ({ hours, minutes, seconds, completed }: { hours: number; minutes: number; seconds: number; completed: unknown}) => {
-  
-  const currentDay = new Date().toLocaleString('en-us',{month:'short', day:'numeric'})
 
   if (completed) {
     return (
-        <Box display='flex' justifyContent='center' alignItems='center' fontFamily='Poppins'>
-          <Text fontSize='150' color='whiteAlpha.500' fontWeight='bold'>{year.getFullYear()}</Text>
+        <aside className='flex h-screen w-full items-center text-white justify-center gap-4 font-bold text-9xl'>
+          <h1 >{import.meta.env.VITE_NEW_YEAR}</h1>
           <FireworksMoment/>
-        </Box>
+          <video src="../assets/videos/confetti.mp4" autoPlay muted loop></video>
+        </aside>
     );
   }
 
+  if (seconds <= 10 && hours === 0 && minutes === 0) {
+    return (
+      <aside className='flex h-screen w-full items-center text-white justify-center gap-4 font-bold text-9xl animate-pulse'>
+        <h1>{seconds}</h1>
+        <video src="../assets/videos/circle.mp4" autoPlay muted loop></video>
+      </aside>
+    )
+  }
+
   if (currentDay === 'Dec 31') {
-    if (seconds <= 10 && hours === 0 && minutes === 0) {
-      return (
-        <Box display='flex' justifyContent='center' alignItems='center' fontFamily='Poppins'>
-          <Text fontSize='150' color='whiteAlpha.500' fontWeight='bold'>{seconds}</Text>
-        </Box>
-      )
-    } else {
-      return (
-        <Box display='flex' paddingTop='4rem' fontFamily='Poppins' color='white' justifyContent='center'>
-          <Stack direction='row' spacing='3rem'>
-            <Box display='flex' alignItems='center' flexDirection='column'>
-              <Text fontWeight='bold' fontSize='55'>{zeroPad(hours)}</Text>
-              <Text marginTop='1'>Horas</Text>
-            </Box>
-            <Box display='flex' alignItems='center' flexDirection='column'>
-              <Text fontWeight='bold' fontSize='55'>{zeroPad(minutes)}</Text>
-              <Text marginTop='1'>Minutos</Text>
-            </Box>
-            <Box display='flex' alignItems='center' flexDirection='column'>
-              <Text fontWeight='bold' fontSize='55'>{zeroPad(seconds)}</Text>
-              <Text marginTop='1'>Segundos</Text>
-            </Box>
-          </Stack>
-        </Box> 
-      );
-    }
+    return (
+      <aside className='flex h-screen w-full items-center text-white justify-center gap-4 font-bold text-7xl'>
+        <h1>{zeroPad(hours)}</h1>
+        <label>:</label>
+        <h1>{zeroPad(minutes)}</h1>
+        <label>:</label>
+        <h1>{zeroPad(seconds)}</h1>
+        <video src="../assets/videos/loading.mp4" autoPlay muted loop></video>
+      </aside> 
+    )
   }
 };
 
 const CountDownComponent = () => {
-
   return ( 
     <Countdown
-    date={new Date(`Dec 31, ${year.getFullYear() + 1} 00:00:00`)}
+    date={new Date(`Jan 01, ${import.meta.env.VITE_NEW_YEAR} 00:00:00`)}
     renderer={Renderer}
   /> 
   );
