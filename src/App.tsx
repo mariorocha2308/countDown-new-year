@@ -24,7 +24,7 @@ function App() {
           ? <Suspense>
               <CountDown/>
             </Suspense>
-          : <video src="../assets/videos/christmas.mp4" autoPlay muted loop></video>
+          : <video src="../src/assets/videos/christmas.mp4" autoPlay muted loop></video>
         }
       </section>
 

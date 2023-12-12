@@ -18,7 +18,7 @@ const Renderer = ({ hours, minutes, seconds, completed }: { hours: number; minut
     return (
       <aside className='flex h-screen w-full items-center text-white justify-center gap-4 font-bold text-9xl animate-pulse'>
         <h1>{seconds}</h1>
-        <video src="../assets/videos/circle.mp4" autoPlay muted loop></video>
+        <video src="../assets/videos/christmas.mp4" autoPlay muted loop></video>
       </aside>
     )
   }

@@ -6,7 +6,7 @@
   font-display: swap;
   font-family: "Poppins";
   src: local("PoppinsBold700"),
-    url("../assets/fonts/Poppins-Bold.ttf") format("truetype");
+    url("./assets/fonts/Poppins-Bold.ttf") format("truetype");
 }
 
 video {
@@ -19,22 +19,3 @@ video {
   z-index: -10;
   visibility: visible;
 }
-
-/* .full-screen-toogle {
-  display: grid;
-  place-items: center;
-  height: 100vh;
-  background: #0F2027;  
-  background: -webkit-linear-gradient(to right, #0F2027, #203A43, #0F2027); 
-  background: linear-gradient(to right, #0F2027, #203A43, #0F2027);
-}
-
-.full-screen-float-button {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  font-size: 30px;
-  color: white;
-  cursor: pointer;
-  z-index: 1;
-} */
