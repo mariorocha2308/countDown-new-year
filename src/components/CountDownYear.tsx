@@ -9,7 +9,6 @@ const Renderer = ({ hours, minutes, seconds, completed }: { hours: number; minut
         <aside className='flex h-screen w-full items-center text-white justify-center gap-4 font-bold text-9xl'>
           <h1 >{import.meta.env.VITE_NEW_YEAR}</h1>
           <FireworksMoment/>
-          <video src="../assets/videos/confetti.mp4" autoPlay muted loop></video>
         </aside>
     );
   }
@@ -18,7 +17,6 @@ const Renderer = ({ hours, minutes, seconds, completed }: { hours: number; minut
     return (
       <aside className='flex h-screen w-full items-center text-white justify-center gap-4 font-bold text-9xl animate-pulse'>
         <h1>{seconds}</h1>
-        <video src="../assets/videos/christmas.mp4" autoPlay muted loop></video>
       </aside>
     )
   }
@@ -26,12 +24,7 @@ const Renderer = ({ hours, minutes, seconds, completed }: { hours: number; minut
   if (currentDay === 'Dec 31') {
     return (
       <aside className='flex h-screen w-full items-center text-white justify-center gap-4 font-bold text-7xl'>
-        <h1>{zeroPad(hours)}</h1>
-        <label>:</label>
-        <h1>{zeroPad(minutes)}</h1>
-        <label>:</label>
-        <h1>{zeroPad(seconds)}</h1>
-        <video src="../assets/videos/loading.mp4" autoPlay muted loop></video>
+        <h1>{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}</h1>
       </aside> 
     )
   }

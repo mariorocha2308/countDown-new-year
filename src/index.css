@@ -19,3 +19,7 @@ video {
   z-index: -10;
   visibility: visible;
 }
+
+section:fullscreen {
+  background-color: white;
+}
