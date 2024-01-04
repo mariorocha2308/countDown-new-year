@@ -2,11 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-display: swap;
-  font-family: "Poppins";
-  src: local("PoppinsBold700"),
-    url("./assets/fonts/Poppins-Bold.ttf") format("truetype");
+body {
+  font-family: 'Onest', sans-serif;
 }
 
 video {
@@ -18,4 +15,8 @@ video {
   height: auto;
   z-index: -10;
   visibility: visible;
+}
+
+section:fullscreen {
+  background-color: white;
 }
