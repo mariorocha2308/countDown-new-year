@@ -1,8 +1,10 @@
 import { lazy, Suspense } from "react";
 // import { motion } from "framer-motion"
-const ConfettiRain = lazy(() => import('./ConfettiRain'))
+import { currentDay } from "../helpers";
 import TextInto from "./TextInto";
 
+const ConfettiRain = lazy(() => import('./ConfettiRain'))
+const CountDown = lazy(() => import('./CountDown'))
 // const initRotate = { rotate: 45 }
 
 // const transition1 = {
@@ -63,7 +65,8 @@ const ScreenMotion = () => {
 
       <div className="grid place-items-center text-neutral-50 bg-slate-950 h-[35rem] w-[35rem] 
       rounded-full shadow-[-30px_30px_70px_-5px_rgba(0,0,0,0.3)] shadow-stone-900">
-        <TextInto/>
+        {currentDay !== 'Dec 31' && <TextInto/>}
+        {currentDay === 'Dec 31' && <CountDown/>}
       </div>
       <Suspense>
         <ConfettiRain/> 

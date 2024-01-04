@@ -1,26 +1,23 @@
 import Countdown, { zeroPad } from 'react-countdown';
-import { currentDay } from '../helpers';
+import Cookies from 'js-cookie';
 
 const Renderer = ({ hours, minutes, seconds, completed }: { hours: number; minutes: number; seconds: number; completed: unknown}) => {
 
   if (completed) {
+    Cookies.set('recycle', JSON.stringify(true), { expires: new Date(import.meta.env.VITE_CONFETTI_END)})
+    Cookies.set('run', JSON.stringify(true), { expires: new Date(import.meta.env.VITE_CONFETTI_END)})
+    window.location.reload();
   }
 
   if (seconds <= 10 && hours === 0 && minutes === 0) {
     return (
-      <aside className='flex h-screen w-full items-center text-white justify-center gap-4 font-bold text-9xl animate-ping'>
-        <h1>{seconds}</h1>
-      </aside>
+      <h1 className="font-bold text-[11rem] text-center text-slate-100 animate-ping">{seconds}</h1>
     )
   }
 
-  if (currentDay === 'Dec 31') {
-    return (
-      <aside className='flex h-screen w-full items-center text-white justify-center gap-4 font-bold text-7xl'>
-        <h1>{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}</h1>
-      </aside> 
-    )
-  }
+  return (
+    <h1 className="font-bold text-8xl text-center text-slate-100">{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}</h1>
+  )
 };
 
 const CountDown = () => {
