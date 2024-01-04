@@ -458,6 +458,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/onest@npm:^5.0.2":
+  version: 5.0.2
+  resolution: "@fontsource/onest@npm:5.0.2"
+  checksum: cfbb0078b135893fe8efc960f08d6399c1b0c312ef6a96493c3731cdeed95f05636437592f316c1808299c4216bcac23d746eff65effdd4a2b74de19652acc6c
+  languageName: node
+  linkType: hard
+
 "@isaacs/cliui@npm:^8.0.2":
   version: 8.0.2
   resolution: "@isaacs/cliui@npm:8.0.2"
@@ -1468,6 +1475,7 @@ __metadata:
   resolution: "happy-new-year@workspace:."
   dependencies:
     "@fireworks-js/react": "npm:^2.10.7"
+    "@fontsource/onest": "npm:^5.0.2"
     "@types/react": "npm:^18.2.43"
     "@types/react-dom": "npm:^18.2.17"
     "@vitejs/plugin-react": "npm:^4.2.1"
@@ -1475,8 +1483,10 @@ __metadata:
     framer-motion: "npm:^10.16.16"
     postcss: "npm:^8.4.32"
     react: "npm:^18.2.0"
+    react-confetti: "npm:^6.1.0"
     react-countdown: "npm:^2.3.5"
     react-dom: "npm:^18.2.0"
+    react-use-localstorage: "npm:^3.5.3"
     tailwindcss: "npm:^3.3.6"
     typescript: "npm:^5.3.3"
     vite: "npm:^5.0.7"
@@ -2186,6 +2196,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-confetti@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "react-confetti@npm:6.1.0"
+  dependencies:
+    tween-functions: "npm:^1.2.0"
+  peerDependencies:
+    react: ^16.3.0 || ^17.0.1 || ^18.0.0
+  checksum: dc675cdb23ae47be9835c9001360eac4dc8e36b3d41113220780f37185f77dd4448116b0e14e3266f76cb7d41d5da6372638503d351563425dea7f244bd3b480
+  languageName: node
+  linkType: hard
+
 "react-countdown@npm:^2.3.5":
   version: 2.3.5
   resolution: "react-countdown@npm:2.3.5"
@@ -2221,6 +2242,15 @@ __metadata:
   version: 0.14.0
   resolution: "react-refresh@npm:0.14.0"
   checksum: 0dc7d5a197ae193f0bddea2f8d712a2b8477ae401c9e3b04c85d0a046ac7847b24af573923ab4c3ca67735583a6b421edc43b39a07b4d1a46056289249f4f897
+  languageName: node
+  linkType: hard
+
+"react-use-localstorage@npm:^3.5.3":
+  version: 3.5.3
+  resolution: "react-use-localstorage@npm:3.5.3"
+  peerDependencies:
+    react: ">=16.8.1"
+  checksum: b63a8308dd016fd20538fc78070775ada44661661cfe03327c4206ba46a4ff71e8c984d9db5db26858eb8870a94271c0b589da01c9a5d22b714bc52d1ac91fb6
   languageName: node
   linkType: hard
 
@@ -2622,6 +2652,13 @@ __metadata:
   version: 2.6.2
   resolution: "tslib@npm:2.6.2"
   checksum: e5654691294dfbc49d7f37c8476b11a90ab8a0af4ad8cc968af1d013600e84ecfcd9a68e1cb89f5dcfe5c88872e3fbacea830d237cfa063498115a88f4bd2de6
+  languageName: node
+  linkType: hard
+
+"tween-functions@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "tween-functions@npm:1.2.0"
+  checksum: 4b2297d88f471d0bd41f9a78f80cbc32c8706e520a00176775f78dfdabc5bcefa78471db336f086d30f3768eb8013a25552e0a2e9435ad6c7e2e341c843a3f3e
   languageName: node
   linkType: hard
 

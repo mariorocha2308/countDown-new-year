@@ -1,21 +1,14 @@
 import Countdown, { zeroPad } from 'react-countdown';
-import FireworksMoment from './FireworksMoment';
 import { currentDay } from '../helpers';
 
 const Renderer = ({ hours, minutes, seconds, completed }: { hours: number; minutes: number; seconds: number; completed: unknown}) => {
 
   if (completed) {
-    return (
-        <aside className='flex h-screen w-full items-center text-white justify-center gap-4 font-bold text-9xl'>
-          <h1 >{import.meta.env.VITE_NEW_YEAR}</h1>
-          <FireworksMoment/>
-        </aside>
-    );
   }
 
   if (seconds <= 10 && hours === 0 && minutes === 0) {
     return (
-      <aside className='flex h-screen w-full items-center text-white justify-center gap-4 font-bold text-9xl animate-pulse'>
+      <aside className='flex h-screen w-full items-center text-white justify-center gap-4 font-bold text-9xl animate-ping'>
         <h1>{seconds}</h1>
       </aside>
     )
@@ -30,13 +23,13 @@ const Renderer = ({ hours, minutes, seconds, completed }: { hours: number; minut
   }
 };
 
-const CountDownComponent = () => {
+const CountDown = () => {
   return ( 
     <Countdown
-    date={new Date(`Jan 01, ${import.meta.env.VITE_NEW_YEAR} 00:00:00`)}
+    date={new Date(`Jan 1, ${import.meta.env.VITE_NEW_YEAR} 00:00:00`)}
     renderer={Renderer}
   /> 
   );
 }
 
-export default CountDownComponent;
+export default CountDown;
