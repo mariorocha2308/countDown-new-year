@@ -30,8 +30,8 @@ const ScreenMotion = () => {
         </Suspense>
       )}
 
-      <MotionLine color="indigo-400" h="32" w="10" position="-bottom-10 right-24" slideUp
-        transitionX={transition1} transitionY={transition1}/>
+      <MotionLine className="absolute w-10 h-32 -bottom-10 right-24 bg-indigo-400 rounded-3xl z-10" 
+        transitionX={transition1} transitionY={transition1} slideUp/>
 
       <div className="absolute w-0 h-0 bottom-0 right-0
       border-t-[0px] border-t-transparent
